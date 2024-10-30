@@ -1,0 +1,46 @@
+# Proyecto: Sistema de Alerta de Seguridad con Láser y Fotodetector
+
+Este proyecto utiliza un ESP8266 (NodeMCU) junto con un láser y un fotodetector para detectar la interrupción de un haz de luz láser. Cuando el haz es interrumpido, el sistema envía un SMS de alerta.
+
+## Componentes Utilizados
+- **ESP8266 NodeMCU Kit 12-E**
+- **Módulo Láser**
+- **Fotodetector**
+- **Fuente de alimentación para ESP8266 (5V)**
+
+## Conexiones Físicas
+
+### 1. ESP8266 (NodeMCU)
+El **ESP8266** es el microcontrolador principal que controla el sistema, se conecta a los demás componentes según las instrucciones:
+
+| Pin ESP8266   | Componente       | Descripción                                    |
+|---------------|------------------|------------------------------------------------|
+| **D1**        | Módulo Láser     | Control del encendido/apagado del láser        |
+| **D2**        | Fotodetector     | Lee el estado del láser (interrumpido o activo)|
+| **GND**       | Módulo Láser     | Conexión de tierra compartida con el láser     |
+| **GND**       | Fotodetector     | Conexión de tierra compartida con el fotodetector |
+| **3V3 o VIN** | Módulo Láser     | Alimenta el módulo láser                       |
+| **3V3 o VIN** | Fotodetector     | Alimenta el fotodetector                       |
+
+### 2. Módulo Láser
+El módulo láser emite un haz de luz constante que el fotodetector debe recibir hasta que el haz se interrumpa.
+
+- **VCC** (Pin de alimentación): Conectar a **3V3 o VIN** del ESP8266.
+- **GND**: Conectar a **GND** del ESP8266.
+- **Control** (si el módulo láser tiene un pin de control): Conectar a **D1** del ESP8266 para activarlo o desactivarlo mediante programación.
+
+### 3. Fotodetector
+El fotodetector se utiliza para captar la señal del láser. Cuando el haz se interrumpe, el fotodetector cambiará su señal y alertará al ESP8266.
+
+- **VCC**: Conectar a **3V3 o VIN** del ESP8266.
+- **GND**: Conectar a **GND** del ESP8266.
+- **OUT** (Salida digital del fotodetector): Conectar a **D2** del ESP8266.
+
+## Diagrama de Conexión (Opcional)
+### Ejemplo de Conexión
+```plaintext
+ESP8266   -- Láser   -- Fotodetector
+D1         Control   -
+D2         -         OUT
+GND        GND       GND
+3V3        VCC       VCC
