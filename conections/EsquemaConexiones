@@ -1,0 +1,34 @@
+Elementos en el Esquema
+ESP8266: El microcontrolador principal que ejecuta el código.
+Fuente de Alimentación: Puede ser una batería o conexión por USB.
+Conexiones USB/Serial: Para programar el ESP8266 y monitorear la salida en el puerto serie.
+
+Esquema Básico
+Sin Sensor de Movimiento (solo para envío programado de correos)
+
+[ESP8266]
++--------------------------------------+
+| GND -------------------> Conexión a Tierra          |
+| 3V3 -------------------> Fuente de Alimentación 3.3V |
+| TX/RX -----------------> Comunicación Serial         |
+| D0-D8 -----------------> Pines GPIO (no utilizados) |
++--------------------------------------+
+
+[ESP8266]
++--------------------------------------+
+| GND -------------------> Conexión a Tierra          |
+| 3V3 -------------------> Fuente de Alimentación 3.3V |
+| TX/RX -----------------> Comunicación Serial         |
+| D2 --------------------> OUT del Sensor PIR         |
++--------------------------------------+
+
+Notas sobre las Conexiones
+
+Fuente de Alimentación:
+
+Si utilizas un ESP8266 NodeMCU, puedes alimentarlo con 5V a través del puerto micro-USB.
+Si utilizas un ESP8266 puro (como el ESP-01), necesitarás un regulador de voltaje para suministrar 3.3V.
+Conexión del Sensor PIR (opcional):
+
+
+El ESP8266 se conecta a la PC mediante un cable micro-USB para cargar el programa y realizar depuración a través del puerto serie.
