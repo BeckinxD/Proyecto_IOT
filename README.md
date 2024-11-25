@@ -75,4 +75,4 @@ Licencia
 Este proyecto es de código abierto bajo la Licencia MIT. Puedes modificarlo y distribuirlo según las necesidades, pero se agradece mencionar el proyecto original.
 
 Contacto
-Para preguntas o sugerencias, puedes contactar a [tu_correo@ejemplo.com].
+Para preguntas o sugerencias, puedes contactar a [alarma.infrarrojo@gmail.com].
